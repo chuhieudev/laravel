@@ -1,0 +1,10 @@
+@extends('index')
+@section('page_title',$category->title??'Products')	
+@section('description',$category->meta_desc??null)
+@section('keyword',$category->meta_keyword??null)
+@section('content')
+	@include('header.header')
+	@include('Search.search')
+	@include('Products.products',['category'=>$category??null,'productspaginate'=>$productspaginate??$products])
+	@include('footer.footer')
+@endsection
